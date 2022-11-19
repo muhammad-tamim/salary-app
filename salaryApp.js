@@ -88,7 +88,7 @@ function addRecordHandler() {
     return;
   }
 
-  addRecord(name, !salary);
+  addRecord(name, salary);
 }
 
 function addRecord(name, salary) {
@@ -115,7 +115,7 @@ function secondHandler(e) {
 const showLastItem = function () {
   const items = salary_data;
   let lastKey;
-  for (const key in items){
+  for (const key in items) {
     lastKey = key;
   };
   const lastItem = items[lastKey];
@@ -146,11 +146,10 @@ const displayLastItemDialog = function (lastItem) {
 };
 
 var showDataError = function (name, salary) {
-  const dlg = document.getElementById("#dialog-error");
+  const dlg = document.getElementById("dialog-error");
   dlg.classList.remove("hide");
-
-  toggleErrorMessage("#newName", name, "Who the hell you are talking about!");
-  toggleErrorMessage("#newSalary", salary, "How much that guy make!");
+  toggleErrorMessage("newName", name, "Who the hell you are talking about!");
+  toggleErrorMessage("newSalary", salary, "How much that guy make!");
 
   dlg.dialog({
     width: 600,
@@ -163,6 +162,7 @@ var showDataError = function (name, salary) {
 };
 
 function toggleErrorMessage(selector, value, msg) {
+  console.log(selector, value, msg);
   if (value) {
     document.getElementById(selector + "line").style.display = "none";
   } else {
