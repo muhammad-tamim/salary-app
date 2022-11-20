@@ -180,14 +180,6 @@ const showRecordCount = function (data) {
   dlg.classList.remove("hide");
 
   document.getElementById("numberOfRecords").innerText = data.length;
-
-  dlg.dialog({
-    buttons: {
-      Ok: function () {
-        $(this).dialog("close");
-      },
-    },
-  });
 };
 
 const anotherRecordCountHandler = function anotherRecordCountHandler(e) {
