@@ -80,15 +80,18 @@ const initialCountListener = function () {
 };
 
 function addRecordHandler() {
-  const name = document.getElementById("name").value;
-  const salary = document.getElementById("salary").value;
-
-  if (!name || !salary) {
-    showDataError(name, salary);
+  const name = document.getElementById("name");
+  const salary = document.getElementById("salary");
+  const nameValue = name.value;
+  const salaryValue = salary.value;
+  if (!nameValue || !salaryValue) {
+    showDataError(nameValue, salaryValue);
     return;
   }
 
-  addRecord(name, salary);
+  addRecord(nameValue, salaryValue);
+  name.value = '';
+  salary.value = '';
 }
 
 function addRecord(name, salary) {
